@@ -34,6 +34,16 @@ generateBtn.addEventListener("click", writePassword);
 /////////////////////////////////
 
 //Above my code I need to map out options for uppercase, lowercase, numbers, and special characters
+var lowercaseOps = 'abcdefghijklmnopqrstuvwxyz'
+var uppercaseOps = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+var numbersOps = '0123456789'
+var specCarOps = '!@#$%^&*()-_=+`~{}[];:?/><.,'
+
+//Test function to generate a random pass. NOT DONE YET! SEE PROGRAMIZ TAB TO SEE WHAT THEY DID
+function testFunk(length) {
+  let result = ' ';
+  var charactersLength = "This is where you left off. REPLACE ME"
+}
 
 //My code
 document.getElementById("generate").addEventListener("click", newPass); //This line should react when the button is clicked in the HTML and should fire the function "newPass"
