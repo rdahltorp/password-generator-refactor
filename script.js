@@ -60,6 +60,12 @@ function newPass() {
   //This is if the user hits cancel it will end the function
   if (!passLength) {
     return
+  } else if (passLength < 8) { 
+    alert("Sorry, your password needs to be at least 8 characters. Please try again.")
+    return
+  } else if (passLength > 128) {     
+    alert("Sorry, your password needs to be less than 128 characters. Please try again.")
+    return
   }
 
   //Second popup. Establishes if user wants lowercase letters and assigns value to "lowercase"
