@@ -78,9 +78,10 @@ function newPass() {
   var specCar = confirm("Would you like to use special characters in your password?")
 
 
-  //functions for different character sets
-  if (lowercase + uppercase + numbers + specCar) {
-    function allFourOptions(length) {
+  //Character set options + 6th and final alert
+  if (lowercase && uppercase && numbers && specCar) {
+    //Covers all set options 
+    function allFourSets(length) {
       var result = '';
       var characters = lowercaseOps.concat(uppercaseOps, numbersOps, specCarOps);
       for (var i, i = 0; i < length; i++) {
@@ -89,11 +90,12 @@ function newPass() {
       console.log(result)
     alert("Your new password is: " + result)
     }
-  allFourOptions(passLength)
-  } else if(lowercase + uppercase + numbers + !specCar) {
+  allFourSets(passLength)
+  } else if(lowercase && uppercase && numbers && !specCar) {
+    //Covers all set options minus special
     function lowerUpperNumbs(length) {
       var result = '';
-      var characters = lowercaseOps.concat(uppercaseOps, numbersOps, specCarOps);
+      var characters = lowercaseOps.concat(uppercaseOps, numbersOps);
       for (var i, i = 0; i < length; i++) {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
@@ -101,7 +103,165 @@ function newPass() {
     alert("Your new password is: " + result)
     }
     lowerUpperNumbs(passLength)
+  } else if(lowercase && uppercase && !numbers && specCar) {
+    //Covers all set options minus numbers
+    function lowerUpperSpec(length) {
+      var result = '';
+      var characters = lowercaseOps.concat(uppercaseOps, specCarOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    lowerUpperSpec(passLength)
+  } else if(lowercase && !uppercase && numbers && specCar) {
+    //Covers all set options minus uppercase
+    function lowerNumbsSpec(length) {
+      var result = '';
+      var characters = lowercaseOps.concat(numbersOps, specCarOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    lowerNumbsSpec(passLength)
+  } else if(!lowercase && uppercase && numbers && specCar) {
+    //Covers all set options minus uppercase
+    function upperNumbsSpec(length) {
+      var result = '';
+      var characters = uppercaseOps.concat(numbersOps, specCarOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    upperNumbsSpec(passLength)
+  } else if(lowercase && uppercase && !numbers && !specCar) {
+    //Covers lowercase and uppercase sets
+    function lowerUpper(length) {
+      var result = '';
+      var characters = lowercaseOps.concat(uppercaseOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    lowerUpper(passLength)
+  } else if(lowercase && !uppercase && numbers && !specCar) {
+    //Covers lowercase and numbers sets
+    function lowerNumbs(length) {
+      var result = '';
+      var characters = lowercaseOps.concat(numbersOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    lowerNumbs(passLength)
+  } else if(lowercase && !uppercase && !numbers && specCar) {
+    //Covers lowercase and special sets
+    function lowerSpec(length) {
+      var result = '';
+      var characters = lowercaseOps.concat(specCarOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    lowerSpec(passLength)
+  } else if(!lowercase && uppercase && numbers && !specCar) {
+    //Covers uppercase and number sets
+    function upperNumbs(length) {
+      var result = '';
+      var characters = uppercaseOps.concat(numbersOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    upperNumbs(passLength)
+  } else if(!lowercase && uppercase && !numbers && specCar) {
+    //Covers uppercase and special sets
+    function upperSpec(length) {
+      var result = '';
+      var characters = uppercaseOps.concat(specCarOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    upperSpec(passLength)
+  } else if(!lowercase && !uppercase && numbers && specCar) {
+    //Covers number and special sets
+    function numbsSpec(length) {
+      var result = '';
+      var characters = numbersOps.concat(specCarOps);
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    numbsSpec(passLength)
+  } else if(lowercase && !uppercase && !numbers && !specCar) {
+    //Covers just lowercase set
+    function lowerOnly(length) {
+      var result = '';
+      var characters = lowercaseOps;
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    lowerOnly(passLength)
+  } else if(!lowercase && uppercase && !numbers && !specCar) {
+    //Covers just uppercase set
+    function upperOnly(length) {
+      var result = '';
+      var characters = uppercaseOps;
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    upperOnly(passLength)
+  } else if(!lowercase && !uppercase && numbers && !specCar) {
+    //Covers just numbers set
+    function numbsOnly(length) {
+      var result = '';
+      var characters = numbersOps;
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    numbsOnly(passLength)
+  } else if(!lowercase && !uppercase && !numbers && specCar) {
+    //Covers just special set
+    function specOnly(length) {
+      var result = '';
+      var characters = specCarOps;
+      for (var i, i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length))
+      };
+      console.log(result)
+    alert("Your new password is: " + result)
+    }
+    specOnly(passLength)
+  } else {
+    //This will notify users if no character set was selected that they need to choose at least one.
+    alert("Sorry! You need to select at least one character set to generate a password. Please try again.")
+    return
   }
-
-
 }
