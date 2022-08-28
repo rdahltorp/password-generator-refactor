@@ -17,11 +17,11 @@ function newPass() {
   //Rules for the first popup
   if (!passLength) {
     return
-  } else if (passLength < 8) { 
-    alert("Sorry, your password needs to be at least 8 characters. Please try again.")
+  } else if (passLength < 8 || passLength > 128) { 
+    alert("Sorry, your password needs to be between 8 and 128 characters. Please try again.")
     return
-  } else if (passLength > 128) {     
-    alert("Sorry, your password needs to be less than 128 characters. Please try again.")
+  } else if (isNaN(passLength)) {     
+    alert("Sorry, to generate your password you need to enter in numeric values only. Please try again.")
     return
   }
 
@@ -51,7 +51,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result) //Passwords are logged in console should the user need to look back at the prior passwords created in the session.
-    alert("With your selections of lowercase, uppercase, numbers and special characters, your new password is: " + result)
+    alert("With your selections of lowercase, uppercase, numbers and special characters, your new password is:\n " + result)
     }
   allFourSets(passLength)
   } else if(lowercase && uppercase && numbers && !specChar) {
@@ -63,7 +63,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of lowercase, uppercase, and number characters, your new password is: " + result)
+    alert("With your selections of lowercase, uppercase, and number characters, your new password is:\n" + result)
     }
     lowerUpperNumbs(passLength)
   } else if(lowercase && uppercase && !numbers && specChar) {
@@ -75,7 +75,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of lowercase, uppercase, and special characters, your new password is: " + result)
+    alert("With your selections of lowercase, uppercase, and special characters, your new password is:\n" + result)
     }
     lowerUpperSpec(passLength)
   } else if(lowercase && !uppercase && numbers && specChar) {
@@ -87,7 +87,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of lowercase, numbers, and special characters, your new password is: " + result)
+    alert("With your selections of lowercase, numbers, and special characters, your new password is:\n" + result)
     }
     lowerNumbsSpec(passLength)
   } else if(!lowercase && uppercase && numbers && specChar) {
@@ -99,7 +99,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of uppercase, numbers, and special characters, your new password is: " + result)
+    alert("With your selections of uppercase, numbers, and special characters, your new password is:\n" + result)
     }
     upperNumbsSpec(passLength)
   } else if(lowercase && uppercase && !numbers && !specChar) {
@@ -111,7 +111,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of lowercase and uppercase characters, your new password is: " + result)
+    alert("With your selections of lowercase and uppercase characters, your new password is:\n" + result)
     }
     lowerUpper(passLength)
   } else if(lowercase && !uppercase && numbers && !specChar) {
@@ -123,7 +123,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of lowercase and number characters, your new password is: " + result)
+    alert("With your selections of lowercase and number characters, your new password is:\n" + result)
     }
     lowerNumbs(passLength)
   } else if(lowercase && !uppercase && !numbers && specChar) {
@@ -135,7 +135,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of lowercase and special characters, your new password is: " + result)
+    alert("With your selections of lowercase and special characters, your new password is:\n" + result)
     }
     lowerSpec(passLength)
   } else if(!lowercase && uppercase && numbers && !specChar) {
@@ -147,7 +147,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of uppercase and number characters, your new password is: " + result)
+    alert("With your selections of uppercase and number characters, your new password is:\n" + result)
     }
     upperNumbs(passLength)
   } else if(!lowercase && uppercase && !numbers && specChar) {
@@ -159,7 +159,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of uppercase and special characters, your new password is: " + result)
+    alert("With your selections of uppercase and special characters, your new password is:\n" + result)
     }
     upperSpec(passLength)
   } else if(!lowercase && !uppercase && numbers && specChar) {
@@ -171,7 +171,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selections of number and special characters, your new password is: " + result)
+    alert("With your selections of number and special characters, your new password is:\n" + result)
     }
     numbsSpec(passLength)
   } else if(lowercase && !uppercase && !numbers && !specChar) {
@@ -183,7 +183,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selection of lowercase characters, your new password is: " + result)
+    alert("With your selection of lowercase characters, your new password is:\n" + result)
     }
     lowerOnly(passLength)
   } else if(!lowercase && uppercase && !numbers && !specChar) {
@@ -195,7 +195,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selection of uppercase characters, your new password is: " + result)
+    alert("With your selection of uppercase characters, your new password is:\n" + result)
     }
     upperOnly(passLength)
   } else if(!lowercase && !uppercase && numbers && !specChar) {
@@ -207,7 +207,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selection of number characters, your new password is: " + result)
+    alert("With your selection of number characters, your new password is:\n" + result)
     }
     numbsOnly(passLength)
   } else if(!lowercase && !uppercase && !numbers && specChar) {
@@ -219,7 +219,7 @@ function newPass() {
         result += characters.charAt(Math.floor(Math.random() * characters.length))
       };
       console.log(result)
-    alert("With your selection of special characters, your new password is: " + result)
+    alert("With your selection of special characters, your new password is:\n" + result)
     }
     specOnly(passLength)
   } else {
